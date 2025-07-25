@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+service DistanceService {
+  rpc Estimate (FrameRequest) returns (EstimateResponse);
+}
+
+message FrameRequest {
+  bytes image = 1;
+}
+
+message EstimateResponse {
+  float speed = 1;
+  float safe_distance = 2;
+}
